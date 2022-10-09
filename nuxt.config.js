@@ -1,7 +1,10 @@
+import { resolve } from "path";
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
 
+  // buildDir: '.dist',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "SSP",
@@ -15,6 +18,21 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "preconnect", href: "https://fonts.googleapis.com" }],
+    link: [
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossorigin: true,
+      },
+    ],
+    link: [
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap",
+        crossorigin: true,
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -35,13 +53,29 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ["@nuxtjs/i18n"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
+  alias: {
+    images: resolve(__dirname, "./assets/images"),
+    // 'style': resolve(__dirname, './assets/style'),
+    // 'data': resolve(__dirname, './assets/other/data')
+  },
+
   tailwindcss: {
-    configPath: "tailwind.config.ts",
+    configPath: "tailwind.config.js",
     viewer: false,
+  },
+
+  i18n: {
+    locales: [
+      { code: "en", iso: "en-US", file: "en.ts" },
+      { code: "id", iso: "id", file: "id.ts" },
+    ],
+    defaultLocale: "id",
+    lazy: true,
+    langDir: "~/locales/",
   },
 };

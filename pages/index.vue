@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-    <Hero />
+    <Hero class="mt-6 sm:mt-12" />
     <Services />
     <Clients />
     <Contact />

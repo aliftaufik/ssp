@@ -41,7 +41,8 @@
             :key="navItem.id"
             :to="navItem.to"
             @click.native="isMenuShown = false"
-            active-class="border-b border-black font-semibold text-xl"
+            class="font-semibold text-xl"
+            active-class="border-b border-black"
           >
             {{ navItem.text }}
           </nuxt-link>

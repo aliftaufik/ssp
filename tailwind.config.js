@@ -17,6 +17,24 @@ module.exports = {
         playfair: ["Playfair Display", ...defaultTheme.fontFamily.serif],
         poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
+      fontSize: {
+        h1: [
+          "75px",
+          {
+            lineHeight: "80px",
+            letterSpacing: "0.003em",
+            fontWeight: "600",
+          },
+        ],
+        "h1-m": [
+          "40px",
+          {
+            lineHeight: "50px",
+            letterSpacing: "0.003em",
+            fontWeight: "600",
+          },
+        ],
+      },
     },
   },
   plugins: [],

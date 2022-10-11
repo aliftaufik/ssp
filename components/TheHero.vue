@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <div class="lg:flex scroll-mt-32" id="about">
+    <div id="about" class="lg:flex scroll-mt-32">
       <div class="text-center lg:text-start flex-shrink">
         <h1 class="font-playfair text-h1-m sm:text-h1 lg:max-w-2xl">
           {{ $t("hero.title") }}
@@ -50,14 +50,14 @@
         src="~images/hero-image.png"
         alt=""
         class="block mt-6 sm:mt-14 max-w-[172px] sm:max-w-xs mx-auto"
-      />
+      >
     </div>
   </Container>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Container from "./Container.vue";
+import Vue from 'vue'
+import Container from './BaseContainer.vue'
 
-export default Vue.extend({ components: { Container } });
+export default Vue.extend({ components: { Container } })
 </script>

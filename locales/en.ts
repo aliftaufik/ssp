@@ -32,7 +32,7 @@ module.exports = {
       prospect: {
         title: 'Business Prospect',
         subtitle: 'Help provide company data and research as well as arranger in the IPO process.'
-      },
+      }
     }
   },
 

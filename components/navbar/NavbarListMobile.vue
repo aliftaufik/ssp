@@ -12,7 +12,7 @@
           duration-300
           delay-150
         "
-      ></div>
+      />
     </transition>
 
     <div ref="navbarMenuMobile">
@@ -21,7 +21,7 @@
         alt="Navigation menu"
         class="relative z-20 w-[55px] cursor-pointer"
         @click="toggleMenu"
-      />
+      >
 
       <div
         :class="[
@@ -33,16 +33,16 @@
           src="~images/navbar/menu.png"
           alt=""
           class="absolute top-0 right-0 w-[276px] h-[326px] object-right-top"
-        />
+        >
 
         <div class="relative flex flex-col space-y-4 items-center mt-16">
           <nuxt-link
             v-for="navItem in navList"
             :key="navItem.id"
             :to="navItem.to"
-            @click.native="isMenuShown = false"
             class="font-semibold text-xl"
             active-class="border-b border-black"
+            @click.native="isMenuShown = false"
           >
             {{ navItem.text }}
           </nuxt-link>
@@ -55,8 +55,8 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from "vue";
-import LangSwitcher from "../LangSwitcher.vue";
+import Vue, { PropType } from 'vue'
+import LangSwitcher from '../LangSwitcher.vue'
 
 export default Vue.extend({
   components: { LangSwitcher },
@@ -69,37 +69,38 @@ export default Vue.extend({
           to: string;
         }>
       >,
-    },
+      default: () => []
+    }
   },
 
-  data() {
+  data () {
     return {
-      isMenuShown: false,
-    };
+      isMenuShown: false
+    }
+  },
+
+  mounted () {
+    window.addEventListener('click', this.handleClickOutside)
+  },
+
+  beforeDestroy () {
+    window.removeEventListener('click', this.handleClickOutside)
   },
 
   methods: {
-    toggleMenu() {
-      this.isMenuShown = !this.isMenuShown;
+    toggleMenu () {
+      this.isMenuShown = !this.isMenuShown
     },
 
-    handleClickOutside(ev: MouseEvent) {
+    handleClickOutside (ev: MouseEvent) {
       if (
         !(this.$refs.navbarMenuMobile as HTMLDivElement)?.contains(
           ev.target as Node
         )
       ) {
-        this.isMenuShown = false;
+        this.isMenuShown = false
       }
-    },
-  },
-
-  mounted() {
-    window.addEventListener("click", this.handleClickOutside);
-  },
-
-  beforeDestroy() {
-    window.removeEventListener("click", this.handleClickOutside);
-  },
-});
+    }
+  }
+})
 </script>

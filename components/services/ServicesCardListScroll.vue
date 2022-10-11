@@ -10,10 +10,10 @@
       "
     >
       <ServicesCard
-        ref="cards"
         v-for="card in cardList"
-        :key="card.id"
         :id="card.id"
+        ref="cards"
+        :key="card.id"
         :icon="card.icon"
         :title="card.title"
         :text="card.text"
@@ -29,80 +29,83 @@
         class="rounded-full w-2.5 h-2.5 border-2 border-white"
         :class="[currentIndex === index && 'bg-white']"
         @click="handleCardButton(index)"
-      ></button>
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from "vue";
-import ServicesCard from "./ServicesCard.vue";
+import Vue, { PropType } from 'vue'
+import ServicesCard from './ServicesCard.vue'
 
 export default Vue.extend({
   components: { ServicesCard },
 
   props: {
-    cardList: Array as PropType<
-      Array<{
-        id: number;
-        icon: any;
-        title: string;
-        text: string;
-        lineColor: string;
-      }>
-    >,
+    cardList: {
+      type: Array as PropType<
+        Array<{
+          id: number;
+          icon: any;
+          title: string;
+          text: string;
+          lineColor: string;
+        }>
+      >,
+      default: () => []
+    }
   },
 
-  data() {
+  data () {
     return {
       intersectionObserver: null as IntersectionObserver | null,
-      currentIndex: 0,
-    };
+      currentIndex: 0
+    }
   },
 
-  methods: {
-    handleIntersect(entries: IntersectionObserverEntry[]) {
-      const cardIndex = (
-        this.$refs.cards as InstanceType<typeof ServicesCard>[]
-      ).findIndex((card) => entries.some((entry) => entry.target === card.$el));
-
-      if (entries[0].intersectionRatio >= 1) {
-        this.currentIndex = cardIndex;
-      }
-    },
-
-    handleCardButton(index: number = 0) {
-      const cardId = this.cardList[index].id;
-      const card = (
-        this.$refs.cards as InstanceType<typeof ServicesCard>[]
-      ).find((card) => Number(card.id === cardId));
-
-      card?.$el.scrollIntoView({
-        block: "nearest",
-        behavior: "smooth",
-      });
-    },
-  },
-
-  mounted() {
+  mounted () {
     this.intersectionObserver = new IntersectionObserver(this.handleIntersect, {
-      threshold: 1,
+      threshold: 1
     });
 
     (this.$refs.cards as InstanceType<typeof ServicesCard>[])?.forEach(
       (card) => {
-        this.intersectionObserver?.observe(card.$el);
+        this.intersectionObserver?.observe(card.$el)
       }
-    );
+    )
   },
 
-  beforeDestroy() {
+  beforeDestroy () {
     (this.$refs.cards as InstanceType<typeof ServicesCard>[])?.forEach(
       (card) => {
-        this.intersectionObserver?.unobserve(card.$el);
+        this.intersectionObserver?.unobserve(card.$el)
       }
-    );
-    this.intersectionObserver?.disconnect();
+    )
+    this.intersectionObserver?.disconnect()
   },
-});
+
+  methods: {
+    handleIntersect (entries: IntersectionObserverEntry[]) {
+      const cardIndex = (
+        this.$refs.cards as InstanceType<typeof ServicesCard>[]
+      ).findIndex(card => entries.some(entry => entry.target === card.$el))
+
+      if (entries[0].intersectionRatio >= 1) {
+        this.currentIndex = cardIndex
+      }
+    },
+
+    handleCardButton (index: number = 0) {
+      const cardId = this.cardList[index].id
+      const card = (
+        this.$refs.cards as InstanceType<typeof ServicesCard>[]
+      ).find(card => Number(card.id === cardId))
+
+      card?.$el.scrollIntoView({
+        block: 'nearest',
+        behavior: 'smooth'
+      })
+    }
+  }
+})
 </script>

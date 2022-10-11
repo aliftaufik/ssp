@@ -1,16 +1,16 @@
 <template>
   <div>
-    <Navbar />
-    <Hero class="mt-6 sm:mt-12 lg:mt-32" />
-    <Services class="mt-16" />
-    <Clients />
-    <Contact />
-    <div class="h-screen"></div>
+    <TheNavbar />
+    <TheHero class="mt-6 sm:mt-12 lg:mt-32" />
+    <TheServices class="mt-16" />
+    <TheClients />
+    <TheContact />
+    <div class="h-screen" />
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue'
 
-export default Vue.extend({});
+export default Vue.extend({})
 </script>

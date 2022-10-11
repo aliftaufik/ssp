@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <div class="flex">
+    <div class="lg:flex scroll-mt-32" id="about">
       <div class="text-center lg:text-start flex-shrink">
         <h1 class="font-playfair text-h1-m sm:text-h1 lg:max-w-2xl">
           {{ $t("hero.title") }}

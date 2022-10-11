@@ -34,6 +34,14 @@ module.exports = {
             fontWeight: "600",
           },
         ],
+        "h2-m": [
+          "34px",
+          {
+            lineHeight: "40px",
+            letterSpacing: "0.003em",
+            fontWeight: "600",
+          },
+        ],
       },
     },
   },

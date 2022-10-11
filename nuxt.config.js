@@ -2,7 +2,7 @@ import { resolve } from "path";
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: "static",
+  target: "server",
 
   // buildDir: '.dist',
   // Global page headers: https://go.nuxtjs.dev/config-head

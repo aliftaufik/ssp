@@ -39,7 +39,7 @@
             mt-5
             sm:mt-10
             bg-white
-            drop-shadow-[0px_1px_4px_rgba(0,_0,_0,_0.5)]
+            drop-shadow-[0px_1px_4px_rgba(0,0,0,0.5)]
           "
         >
           {{ $t("hero.cta") }}

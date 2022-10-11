@@ -10,7 +10,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
+import TheNavbar from "~/components/navbar/TheNavbar.vue";
+import TheServices from "~/components/services/TheServices.vue";
+import TheClients from "~/components/TheClients.vue";
+import TheContact from "~/components/TheContact.vue";
+import TheHero from "~/components/TheHero.vue";
 
-export default Vue.extend({})
+export default Vue.extend({
+  components: { TheNavbar, TheHero, TheServices, TheClients, TheContact },
+});
 </script>

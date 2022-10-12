@@ -1,5 +1,5 @@
 <template>
-  <BaseContainer>
+  <BaseContainer id="clients">
     <div class="max-w-md">
       <h2 class="text-h2-m sm:text-h2 font-playfair">
         {{ $t("clients.title") }}

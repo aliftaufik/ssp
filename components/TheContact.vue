@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative" id="contact">
     <img
       src="~images/contacts/bg.png"
       alt=""

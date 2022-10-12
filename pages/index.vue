@@ -4,8 +4,7 @@
     <TheHero class="mt-6 sm:mt-12 lg:mt-32" />
     <TheServices class="mt-16 lg:mt-32" />
     <TheClients class="mt-24 sm:mt-28 lg:mt-44" />
-    <TheContact />
-    <div class="h-screen" />
+    <TheContact class="mt-2 sm:mt-36" />
   </div>
 </template>
 

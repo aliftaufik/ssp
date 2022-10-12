@@ -4,17 +4,17 @@
       src="~images/services/bg.png"
       alt=""
       class="inset-0 w-full object-fill sm:hidden"
-    >
+    />
     <img
       src="~images/services/bg-md.png"
       alt=""
       class="inset-0 w-full object-fill hidden sm:block lg:hidden"
-    >
+    />
     <img
       src="~images/services/bg-lg.png"
       alt=""
       class="inset-0 w-full object-fill hidden lg:block"
-    >
+    />
 
     <div class="absolute inset-0 sm:flex items-center">
       <div
@@ -47,12 +47,10 @@
                 pb-3
               "
             >
-              <img src="~images/services/profile.png" alt="">
+              <img src="~images/services/profile.png" alt="" />
 
               <div>
-                <h3 class="text-sm font-medium">
-                  Saleh Basir
-                </h3>
+                <h3 class="text-sm font-medium">Saleh Basir</h3>
                 <p class="text-xs font-medium mt-0.5">
                   {{ $t("services.position") }}
                 </p>
@@ -128,47 +126,47 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import Container from '../BaseContainer.vue'
-import ServicesCard from './ServicesCard.vue'
-import ServicesCardListScroll from './ServicesCardListScroll.vue'
+import Vue from "vue";
+import Container from "../BaseContainer.vue";
+import ServicesCard from "./ServicesCard.vue";
+import ServicesCardListScroll from "./ServicesCardListScroll.vue";
 
 export default Vue.extend({
   components: { Container, ServicesCard, ServicesCardListScroll },
 
   computed: {
-    cardList () {
+    cardList() {
       return [
         {
           id: 1,
-          icon: require('images/services/cards/ipo.png'),
-          title: this.$t('services.cards.ipo.title') as string,
-          text: this.$t('services.cards.ipo.subtitle') as string,
-          lineColor: 'bg-[#AA5353]'
+          icon: require("images/services/cards/ipo.png"),
+          title: this.$t("services.cards.ipo.title") as string,
+          text: this.$t("services.cards.ipo.subtitle") as string,
+          lineColor: "bg-[#AA5353]",
         },
         {
           id: 2,
-          icon: require('images/services/cards/accompany.png'),
-          title: this.$t('services.cards.accompany.title') as string,
-          text: this.$t('services.cards.accompany.subtitle') as string,
-          lineColor: 'bg-[#FF9900]/75'
+          icon: require("images/services/cards/accompany.png"),
+          title: this.$t("services.cards.accompany.title") as string,
+          text: this.$t("services.cards.accompany.subtitle") as string,
+          lineColor: "bg-[#FF9900]/75",
         },
         {
           id: 3,
-          icon: require('images/services/cards/authority.png'),
-          title: this.$t('services.cards.authority.title') as string,
-          text: this.$t('services.cards.authority.subtitle') as string,
-          lineColor: 'bg-[#00AB4F]/[.54]'
+          icon: require("images/services/cards/authority.png"),
+          title: this.$t("services.cards.authority.title") as string,
+          text: this.$t("services.cards.authority.subtitle") as string,
+          lineColor: "bg-[#00AB4F]/[.54]",
         },
         {
           id: 4,
-          icon: require('images/services/cards/prospect.png'),
-          title: this.$t('services.cards.prospect.title') as string,
-          text: this.$t('services.cards.prospect.subtitle') as string,
-          lineColor: 'bg-[#00E3F1]/75'
-        }
-      ]
-    }
-  }
-})
+          icon: require("images/services/cards/prospect.png"),
+          title: this.$t("services.cards.prospect.title") as string,
+          text: this.$t("services.cards.prospect.subtitle") as string,
+          lineColor: "bg-[#00E3F1]/75",
+        },
+      ];
+    },
+  },
+});
 </script>

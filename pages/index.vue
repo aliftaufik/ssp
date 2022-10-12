@@ -23,57 +23,57 @@
       "
       :class="[isBackToTopShown ? '' : 'translate-y-[175%]']"
       @click="handleScrollToTop"
-    />
+    >
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import TheNavbar from "~/components/navbar/TheNavbar.vue";
-import TheServices from "~/components/services/TheServices.vue";
-import TheClients from "~/components/TheClients.vue";
-import TheContact from "~/components/TheContact.vue";
-import TheHero from "~/components/TheHero.vue";
+import Vue from 'vue'
+import TheNavbar from '~/components/navbar/TheNavbar.vue'
+import TheServices from '~/components/services/TheServices.vue'
+import TheClients from '~/components/TheClients.vue'
+import TheContact from '~/components/TheContact.vue'
+import TheHero from '~/components/TheHero.vue'
 
 export default Vue.extend({
   components: { TheNavbar, TheHero, TheServices, TheClients, TheContact },
 
-  data() {
+  data () {
     return {
       intersectionObserver: null as IntersectionObserver | null,
-      isBackToTopShown: false,
-    };
+      isBackToTopShown: false
+    }
   },
 
-  methods: {
-    handleIntersect(entries: IntersectionObserverEntry[]) {
-      if (entries[0].intersectionRatio === 1) {
-        this.isBackToTopShown = false;
-      } else if (entries[0].intersectionRatio === 0) {
-        this.isBackToTopShown = true;
-      }
-    },
-
-    handleScrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    },
-  },
-
-  mounted() {
+  mounted () {
     this.intersectionObserver = new IntersectionObserver(this.handleIntersect, {
-      threshold: [0, 1],
-    });
+      threshold: [0, 1]
+    })
 
     this.intersectionObserver?.observe(
       (this.$refs.navbar as InstanceType<typeof TheNavbar>)!.$el
-    );
+    )
   },
 
-  beforeDestroy() {
+  beforeDestroy () {
     this.intersectionObserver?.unobserve(
       (this.$refs.navbar as InstanceType<typeof TheNavbar>)!.$el
-    );
-    this.intersectionObserver?.disconnect();
+    )
+    this.intersectionObserver?.disconnect()
   },
-});
+
+  methods: {
+    handleIntersect (entries: IntersectionObserverEntry[]) {
+      if (entries[0].intersectionRatio === 1) {
+        this.isBackToTopShown = false
+      } else if (entries[0].intersectionRatio === 0) {
+        this.isBackToTopShown = true
+      }
+    },
+
+    handleScrollToTop () {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+})
 </script>

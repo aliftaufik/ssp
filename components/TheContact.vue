@@ -92,12 +92,9 @@
             </p>
 
             <div class="flex space-x-12 mt-2.5">
-              <img
-                v-for="socmed in socmedList"
-                :key="socmed.id"
-                :src="socmed.image"
-                :alt="socmed.alt"
-              />
+              <a v-for="socmed in socmedList" :key="socmed.id" href="#">
+                <img :src="socmed.image" :alt="socmed.alt" />
+              </a>
             </div>
           </div>
         </div>

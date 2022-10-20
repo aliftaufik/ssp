@@ -1,24 +1,24 @@
 <template>
   <div id="contact" class="relative overflow-x-hidden">
-    <div class="lg:w-[1420px] sm:w-[768px] md:w-[1024px] min-w-full">
+    <div class="absolute inset-0 h-full">
       <img
         src="~images/contacts/bg.png"
         alt=""
-        class="w-full object-fill sm:hidden"
+        class="w-full h-full object-fill sm:hidden"
       />
       <img
         src="~images/contacts/bg-md.png"
         alt=""
-        class="w-full object-fill hidden sm:block lg:hidden"
+        class="w-full h-full object-fill hidden sm:block lg:hidden"
       />
       <img
         src="~images/contacts/bg-lg.png"
         alt=""
-        class="w-full object-fill hidden lg:block"
+        class="w-full h-full object-fill hidden lg:block"
       />
     </div>
 
-    <div class="absolute inset-0 text-white mt-24 lg:mt-20">
+    <div class="relative text-white mt-24 lg:mt-20 mb-24 sm:mb-40 lg:mb-32">
       <h2
         class="
           text-h2-m
